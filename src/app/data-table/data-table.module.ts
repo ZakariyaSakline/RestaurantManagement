@@ -1,10 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DataTableRoutingModule } from './data-table-routing.module';
+import { MenuInfoComponent } from './component/menu-info/menu-info.component';
+import { AddProductComponent } from './component/add-product/add-product.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import {
   MatToolbarModule,
@@ -40,18 +41,23 @@ import {
   MatBadgeModule
  
 } from '@angular/material';
+import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    MenuInfoComponent,
+    AddProductComponent,
+    ProductDetailComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
+  entryComponents: [AddProductComponent],
 
-    
+  imports: [
+    CommonModule,
+    DataTableRoutingModule,
+    FlexLayoutModule,
+    ReactiveFormsModule,
+    FormsModule,
+
     MatToolbarModule,
     MatSidenavModule,
     MatCheckboxModule,
@@ -83,9 +89,6 @@ import {
     MatSortModule,
     MatPaginatorModule,
     MatBadgeModule
-   
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ]
 })
-export class AppModule { }
+export class DataTableModule { }

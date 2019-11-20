@@ -1,10 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuRoutingModule } from './menu-routing.module';
+import { MenuListComponent } from './component/menu-list/menu-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import {
   MatToolbarModule,
@@ -42,13 +42,10 @@ import {
 } from '@angular/material';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [MenuListComponent],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
+    CommonModule,
+    MenuRoutingModule,
     FlexLayoutModule,
 
     
@@ -82,10 +79,7 @@ import {
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatBadgeModule
-   
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    MatBadgeModule, 
+  ]
 })
-export class AppModule { }
+export class MenuModule { }
